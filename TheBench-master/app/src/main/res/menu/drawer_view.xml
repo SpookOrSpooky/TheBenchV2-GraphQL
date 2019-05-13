@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_group_main">
+
+        <item
+            android:id="@+id/nav_chores_fragment"
+            android:icon="@drawable/ic_playlist_add_check_black_24dp"
+            android:title="@string/chores"
+            android:checked="true" />
+
+        <item
+            android:id="@+id/nav_people_fragment"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="@string/people" />
+
+        <item
+            android:id="@+id/nav_resources_fragment"
+            android:icon="@drawable/ic_local_mall_black_24dp"
+            android:title="@string/resources" />
+
+    </group>
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_group_more">
+
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="@string/sign_out"
+            android:checkable="false"/>
+
+        <!--<item-->
+            <!--android:id="@+id/nav_settings_activity"-->
+            <!--android:icon="@drawable/ic_settings_black_24dp"-->
+            <!--android:title="@string/settings"-->
+            <!--android:checkable="false"/>-->
+
+        <item
+            android:id="@+id/nav_about_activity"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="@string/about"
+            android:checkable="false"/>
+
+    </group>
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_group_users"
+        android:visible="false">
+
+    </group>
+
+</menu>

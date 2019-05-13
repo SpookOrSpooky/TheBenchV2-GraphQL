@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uottawa.thebench.ui.CreateChoreActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/member_selection"
+            android:layout_marginTop="27dp"
+            android:id="@+id/relativeLayout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toLeftOf="@+id/divider2"
+                android:text="Cleaning Cloth"
+                android:textColor="@color/primaryText"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:layout_toLeftOf="@+id/divider2"
+                android:text="" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/dividerColor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@+id/divider2"
+                android:text="Car wax"
+                android:textColor="@color/primaryText"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:text="" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toLeftOf="@+id/divider1"
+                android:text="Car soap"
+                android:textColor="@color/primaryText"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:layout_toLeftOf="@+id/divider1"
+                android:text="" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/dividerColor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@+id/divider1"
+                android:text="Spray bottle"
+                android:textColor="@color/primaryText"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:text="" />
+
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/member_selection"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignEnd="@+id/time_due"
+            android:layout_alignStart="@+id/time_due"
+            android:layout_below="@+id/recurring_selection"
+            android:layout_marginTop="24dp"
+            android:entries="@array/members"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/chore_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Chore Name"
+            android:inputType="textPersonName"
+            android:text="Clean the Car"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/chore_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/due_date"
+            android:layout_below="@+id/chore_name_text"
+            android:layout_marginTop="29dp"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:text="Clean the jeep tonight" />
+
+        <EditText
+            android:id="@+id/due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chore_description_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Date Due"
+            android:inputType="date"
+            android:text="Friday, November 3rd" />
+
+        <EditText
+            android:id="@+id/time_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/due_date"
+            android:layout_below="@+id/due_date"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Time Due"
+            android:inputType="time"
+            android:text="7:00PM"
+            android:textAlignment="center" />
+
+        <Switch
+            android:id="@+id/recurring_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_due"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="33dp"
+            android:layout_toStartOf="@+id/recurring_selection"
+            android:checked="true"
+            android:text="Recurring?"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/recurring_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/recurring_text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/recurring_text"
+            android:layout_marginEnd="58dp"
+            android:entries="@array/recurring"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/resources_label"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/member_selection"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="Resources"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

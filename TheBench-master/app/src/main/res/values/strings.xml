@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TheBench</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="chores">Chores</string>
+    <string name="view_chore">Chore Details</string>
+    <string name="add_chore">Add Chores</string>
+    <string name="people">People</string>
+    <string name="resources">Resources</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string-array name="chores_status_array">
+        <item>Upcoming</item> <!-- Same as Active -->
+        <item>Postponed</item>
+        <item>Completed</item>
+    </string-array>
+    <string-array name="recurring">
+        <item>None</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+    <string-array name="members">
+        <item>John Doe</item>
+        <item>Suzy Doe</item>
+    </string-array>
+    <string name="title_activity_start_screen">Initial Setup</string>
+    <string name="title_activity_create_chore">Create Chore</string>
+    <string name="title_activity_create_person">Add Person</string>
+    <string name="title_activity_start_view">Create A Household</string>
+    <string name="submit">Submit</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>

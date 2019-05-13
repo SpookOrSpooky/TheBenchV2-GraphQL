@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/person_avatar_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        tools:src="@drawable/default_avatar"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/chore_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/person_avatar_image"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        tools:text="Change tires"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="18sp"
+        android:textColor="@color/primaryText"/>
+
+    <TextView
+        android:id="@+id/chore_subtitle_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/person_avatar_image"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        tools:text="Deadline: Yesterday 4:00pm"
+        android:textSize="14sp"
+        android:textColor="@color/secondaryText"/>
+
+</RelativeLayout>

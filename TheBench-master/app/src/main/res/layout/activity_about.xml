@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uottawa.thebench.ui.AboutActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/txtLibraries"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:text="The Bench"
+            android:textColor="@color/primaryText"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:text="Daniel Campbell"
+            android:textColor="@color/secondaryText" />
+
+        <TextView
+            android:id="@+id/txtLibraries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtName3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:text="Libraries Used"
+            android:textColor="@color/primaryText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtLib1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLibraries"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Hdodenhof : CircleImageView 2.2.0"
+            android:textColor="@color/secondaryText" />
+
+        <TextView
+            android:id="@+id/txtLib2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLib1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="Rohit : RecyclerItemClickSupport 1.0.1"
+            android:textColor="@color/secondaryText" />
+
+        <TextView
+            android:id="@+id/txtLib3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLib2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Joda-Time : Joda-Time 2.9.9"
+            android:textColor="@color/secondaryText" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

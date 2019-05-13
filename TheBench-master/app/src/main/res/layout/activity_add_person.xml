@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uottawa.thebench.ui.AddPersonActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/avatar_container_layout"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/avatar_image"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/default_avatar" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:tint="@color/secondaryText"
+                android:src="@drawable/ic_photo_camera_black_18dp"/>
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/person_name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avatar_container_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:maxLength="30"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName|textCapSentences" />
+
+        <Switch
+            android:id="@+id/admin_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/person_name_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:text="Admin"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/password_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/person_name_edit"
+            android:layout_below="@+id/admin_switch"
+            android:layout_marginTop="16dp"
+            android:maxLength="20"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
