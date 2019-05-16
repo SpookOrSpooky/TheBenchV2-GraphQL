@@ -109,16 +109,16 @@ class AddChore(graphene.Mutation):
     chore = graphene.Field(ChoreType)
 
     class Arguments:
-        name = graphene.String(),
-        description= graphene.String(),
-        isAllDay= graphene.Boolean,
-        points= graphene.Int(),
-        status= graphene.Int(),
-        recurrence_pattern= graphene.Int(),
-        recurrence_enddate= graphene.DateTime(),
-        deadline= graphene.DateTime(),
-        creator= graphene.Int(),  # userid
-        assignee= graphene.ID(),  # userid
+        name = graphene.String()
+        description= graphene.String()
+        isAllDay= graphene.Boolean()
+        points= graphene.Int()
+        status= graphene.Int()
+        recurrence_pattern= graphene.Int()
+        recurrence_enddate= graphene.DateTime()
+        deadline= graphene.DateTime()
+        creator= graphene.Int()  # userid
+        assignee= graphene.ID()  # userid
         resources= graphene.List(ResourceCreateInput)
 
 
@@ -146,9 +146,9 @@ class AddChore(graphene.Mutation):
             recurrence_enddate = recurrence_enddate,
             deadline = deadline,
             created_by = cUser,
-            assigned_to = aUser,
-
+            assigned_to = aUser
         )
+
         chore.save()
         # I'M REALLY NOT SURE THIS NEXT PART WILL WORK
 
@@ -171,14 +171,14 @@ class UpdateChore(graphene.Mutation):
     success = graphene.Boolean()
 
     class Arguments:
-        chore_id = graphene.Int(),
-        name = graphene.String(),
-        description = graphene.String(),
-        isAllDay = graphene.Boolean,
-        points = graphene.Int(),
-        status = graphene.Int(),
-        deadline = graphene.DateTime(),
-        assignee = graphene.Int(),
+        chore_id = graphene.Int()
+        name = graphene.String()
+        description = graphene.String()
+        isAllDay = graphene.Boolean()
+        points = graphene.Int()
+        status = graphene.Int()
+        deadline = graphene.DateTime()
+        assignee = graphene.Int()
         resources = graphene.List(ResourceCreateInput)
 
     def mutate(self, info, chore_id, isAllDay, points, status, deadline, assignee = None, name = None, description = None, resources = None ):
@@ -223,7 +223,7 @@ class UpdateChore(graphene.Mutation):
 
 
 class DeleteChore(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
     class Arguments:
         chore_id = graphene.Int()
@@ -246,7 +246,7 @@ class DeleteChore(graphene.Mutation):
 
 
 class DeleteAllChores(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
 
     def mutate(self, info):
