@@ -16,7 +16,7 @@ class ChoreType(DjangoObjectType):
     class Meta:
         model = Chore
 
-class ResourceCreateInput(graphene.InputObjectType):
+class ResourceCreateInputType(graphene.InputObjectType):
     name = graphene.String(required = True)
     checked = graphene.Boolean(required = True)
 
@@ -119,7 +119,7 @@ class AddChore(graphene.Mutation):
         deadline= graphene.DateTime()
         creator= graphene.Int()  # userid
         assignee= graphene.ID()  # userid
-        resources= graphene.List(ResourceCreateInput)
+        resources= graphene.List(ResourceCreateInputType)
 
 
 
@@ -153,7 +153,7 @@ class AddChore(graphene.Mutation):
         # I'M REALLY NOT SURE THIS NEXT PART WILL WORK
 
         if resources != None:
-            for x in resources: #each x is of type ResourceCreateInput
+            for x in resources: #each x is of type ResourceCreateInputType
                 resource = Resource(
                     name = x.name,
                     checked = x.checked,
@@ -179,7 +179,7 @@ class UpdateChore(graphene.Mutation):
         status = graphene.Int()
         deadline = graphene.DateTime()
         assignee = graphene.Int()
-        resources = graphene.List(ResourceCreateInput)
+        resources = graphene.List(ResourceCreateInputType)
 
     def mutate(self, info, chore_id, isAllDay, points, status, deadline, assignee = None, name = None, description = None, resources = None ):
         chore = Chore.objects.get(id__exact = chore_id)
