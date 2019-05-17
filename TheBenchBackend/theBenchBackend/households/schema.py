@@ -47,7 +47,7 @@ class AddHousehold(graphene.Mutation):
         return None
 
 class UpdateHousehold(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
     class Arguments:
         name = graphene.String(required= True)

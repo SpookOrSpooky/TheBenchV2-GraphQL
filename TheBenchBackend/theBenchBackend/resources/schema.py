@@ -62,7 +62,7 @@ class AddResource(graphene.Mutation):
          r = Resource(
              name = ResourceCreateInput.name,
              checked = ResourceCreateInput.checked,
-             assigned_to = chore,
+             assigned_to = chore
          )
          r.save()
 
@@ -70,7 +70,7 @@ class AddResource(graphene.Mutation):
          return AddResource(assigned_id = ResourceCreateInput.chore_id)
 
 class UpdateResource(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
     class Arguments:
         resource = ResourceCreateInput(required=True)
@@ -101,7 +101,7 @@ class UpdateResource(graphene.Mutation):
         return UpdateResource(success = True)
 
 class DeleteResource(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
     class Arguments:
         resource = ResourceCreateInput(required=True)

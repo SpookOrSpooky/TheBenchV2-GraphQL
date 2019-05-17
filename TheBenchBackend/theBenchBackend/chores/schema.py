@@ -16,7 +16,7 @@ class ChoreType(DjangoObjectType):
     class Meta:
         model = Chore
 
-class ResourceCreateInput(graphene.InputObjectType):
+class ResourceCreateInputType(graphene.InputObjectType):
     name = graphene.String(required = True)
     checked = graphene.Boolean(required = True)
 
@@ -109,17 +109,17 @@ class AddChore(graphene.Mutation):
     chore = graphene.Field(ChoreType)
 
     class Arguments:
-        name = graphene.String(),
-        description= graphene.String(),
-        isAllDay= graphene.Boolean,
-        points= graphene.Int(),
-        status= graphene.Int(),
-        recurrence_pattern= graphene.Int(),
-        recurrence_enddate= graphene.DateTime(),
-        deadline= graphene.DateTime(),
-        creator= graphene.Int(),  # userid
-        assignee= graphene.ID(),  # userid
-        resources= graphene.List(ResourceCreateInput)
+        name = graphene.String()
+        description= graphene.String()
+        isAllDay= graphene.Boolean()
+        points= graphene.Int()
+        status= graphene.Int()
+        recurrence_pattern= graphene.Int()
+        recurrence_enddate= graphene.DateTime()
+        deadline= graphene.DateTime()
+        creator= graphene.Int()  # userid
+        assignee= graphene.ID()  # userid
+        resources= graphene.List(ResourceCreateInputType)
 
 
 
@@ -146,14 +146,14 @@ class AddChore(graphene.Mutation):
             recurrence_enddate = recurrence_enddate,
             deadline = deadline,
             created_by = cUser,
-            assigned_to = aUser,
-
+            assigned_to = aUser
         )
+
         chore.save()
         # I'M REALLY NOT SURE THIS NEXT PART WILL WORK
 
         if resources != None:
-            for x in resources: #each x is of type ResourceCreateInput
+            for x in resources: #each x is of type ResourceCreateInputType
                 resource = Resource(
                     name = x.name,
                     checked = x.checked,
@@ -171,15 +171,15 @@ class UpdateChore(graphene.Mutation):
     success = graphene.Boolean()
 
     class Arguments:
-        chore_id = graphene.Int(),
-        name = graphene.String(),
-        description = graphene.String(),
-        isAllDay = graphene.Boolean,
-        points = graphene.Int(),
-        status = graphene.Int(),
-        deadline = graphene.DateTime(),
-        assignee = graphene.Int(),
-        resources = graphene.List(ResourceCreateInput)
+        chore_id = graphene.Int()
+        name = graphene.String()
+        description = graphene.String()
+        isAllDay = graphene.Boolean()
+        points = graphene.Int()
+        status = graphene.Int()
+        deadline = graphene.DateTime()
+        assignee = graphene.Int()
+        resources = graphene.List(ResourceCreateInputType)
 
     def mutate(self, info, chore_id, isAllDay, points, status, deadline, assignee = None, name = None, description = None, resources = None ):
         chore = Chore.objects.get(id__exact = chore_id)
@@ -223,7 +223,7 @@ class UpdateChore(graphene.Mutation):
 
 
 class DeleteChore(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
     class Arguments:
         chore_id = graphene.Int()
@@ -246,7 +246,7 @@ class DeleteChore(graphene.Mutation):
 
 
 class DeleteAllChores(graphene.Mutation):
-    success = graphene.Boolean
+    success = graphene.Boolean()
 
 
     def mutate(self, info):
